@@ -1,0 +1,101 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  /* display: flex;
+  /* place-items: center; */
+  /* min-width: 320px;
+  min-height: 100vh; */
+}
+
+.select-image:hover {
+  cursor: pointer;
+}
+
+.property-item:hover {
+  cursor: pointer;
+  background-color: #23272e;
+  color: #ffffff;
+  transition: ease-in 200ms;
+}
+
+.allProperties {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-areas: "list portfolio";
+  padding-left: 1dvw;
+}
+
+.allPropertiesList {
+  grid-area: list;
+}
+
+.allPropertiesPortfolio {
+  grid-area: portfolio;
+  border: none;
+  border-left: 1px solid white;
+}
+
+.property-item {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 0.5fr 0.5fr;
+  align-items: center;
+  justify-content: center;
+  min-width: 10vw;
+  height: 8vh;
+  border: 1px dotted white;
+  margin-bottom: 2vh;
+}
+.allPropertiesList {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5vh;
+  padding-right: 1dvw;
+  height: 100vh;
+}
+
+.create-portfolio:hover {
+  background-color: #2796ff;
+  color: white;
+  cursor: pointer;
+  transition: ease-in 300ms;
+}
+
+/* portfolio box */
+.portfolio-box {
+  /* Your existing styles */
+  /* ... */
+  opacity: 0;
+}
+
+.portfolio-box.show {
+  opacity: 1;
+}
+
+.added-portfolio-item:hover {
+  cursor: pointer;
+}
+.portfolio-name:hover {
+  color: #2796ff;
+  cursor: pointer;
+}
+
+.remove-icon:hover {
+  cursor: pointer;
+  color: red;
+}
