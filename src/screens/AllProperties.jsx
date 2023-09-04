@@ -24,9 +24,23 @@ import { AddedPorfolioItem } from "../components/AddedPorfolioItem";
 import { AddItemToPortfolio } from "../components/AddItemToPortfolio";
 import { SavedPortfolioItem } from "../components/SavedPortfolioItem";
 import { v4 } from "uuid";
+import {
+  setOpenPortfolioDateAdded,
+  setOpenPortfolioKey,
+  setOpenPortfolioName,
+  setOpenPortfolioProperties,
+} from "../../app/features/OpenPortfolioItemSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export const AllProperties = () => {
+  // theme
   const theme = useTheme();
+  // redux dispatch
+  const dispatch = useDispatch();
+  // navigation
+  const navigate = useNavigate();
+
   const [propertyList, setPropertyList] = useState([]);
   useEffect(() => {
     // get saved portfolio list from database
@@ -140,7 +154,16 @@ export const AllProperties = () => {
       }
     }
   };
-
+  // dispatch(setOpenPortfolioName("rem"));
+  // function to open saved portfolio item
+  const handleOpenPortfolioItem = async (name, key, date, properties) => {
+    await dispatch(setOpenPortfolioName(name));
+    await dispatch(setOpenPortfolioKey(key));
+    await dispatch(setOpenPortfolioDateAdded(date));
+    await dispatch(setOpenPortfolioProperties(properties));
+    // navigate to the portfolio screen
+    navigate(`/portfolio/:${key}`);
+  };
   // function to delete saved portfolio item
   const handleDeletePortfolioItem = async (name, key) => {
     const sortedPortfolioItems = savedPortfolioList.filter(
@@ -283,7 +306,16 @@ export const AllProperties = () => {
               </Typography>
               {savedPortfolioList.map((item) => (
                 <SavedPortfolioItem
+                  key={item.key}
                   name={item.name}
+                  handleOpenPortfolioItem={() =>
+                    handleOpenPortfolioItem(
+                      item.name,
+                      item.key,
+                      item.dateAdded,
+                      item.properties
+                    )
+                  }
                   handleDeletePortfolioItem={() =>
                     handleDeletePortfolioItem(item.name, item.key)
                   }

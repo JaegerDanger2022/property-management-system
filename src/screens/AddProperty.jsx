@@ -1,6 +1,7 @@
 import {
   Alert,
   Badge,
+  Button,
   Card,
   CardActions,
   CardMedia,
@@ -31,10 +32,12 @@ import { SelectedImages } from "../components/SelectedImages";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import properties from "../DataSets/PropertyTypes";
+import { useDispatch } from "react-redux";
+import { setOpenPortfolioName } from "../../app/features/OpenPortfolioItemSlice";
 
 export const AddProperty = () => {
   const theme = useTheme();
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   //   { label: "Residential Properties", header: true },
@@ -500,6 +503,9 @@ export const AddProperty = () => {
         }}
       >
         <ActionButton label="Submit" handleAction={handleAction} />
+        <Button onClick={() => dispatch(setOpenPortfolioName("name"))}>
+          Test
+        </Button>
       </div>
     </div>
   );
