@@ -8,6 +8,9 @@ export const CustomTextField = ({
   type,
   autoFocus,
   onFocus,
+  error,
+  helperText,
+  inputProps,
 }) => {
   return (
     <div style={{ width: "20vw" }}>
@@ -19,6 +22,9 @@ export const CustomTextField = ({
         placeholder={placeholder}
         type={type}
         autoFocus={autoFocus}
+        error={error}
+        helperText={helperText}
+        inputProps={inputProps}
       />
     </div>
   );

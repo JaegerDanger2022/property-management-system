@@ -105,7 +105,7 @@ export const PortfolioPropertyCard = ({ properties, name, date_added }) => {
                   {/* display the others */}
                   {item.propertyImages.slice(1).map((imageSrc) => (
                     <img
-                      key={imageSrc} // Don't forget to add a unique key for each image
+                      key={imageSrc}
                       src={imageSrc}
                       style={{ width: "15dvw", height: "15dvh" }}
                     />

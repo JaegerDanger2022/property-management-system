@@ -33,6 +33,7 @@ body {
   transition: ease-in 200ms;
 }
 
+/* all properties screen */
 .allProperties {
   display: grid;
   grid-template-columns: 4fr 2fr;
@@ -46,6 +47,29 @@ body {
 
 .allPropertiesPortfolio {
   grid-area: portfolio;
+  border: none;
+  border-left: 1px solid white;
+}
+
+/* property details screen */
+.propertyDetailsScreen {
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  grid-template-areas: "details addTenant";
+  padding-left: 1dvw;
+  padding-top: 5dvh;
+  height: 80dvh;
+}
+
+.propertyDetails {
+  grid-area: details;
+}
+
+.propertyDetailsAddTenant {
+  grid-area: addTenant;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border: none;
   border-left: 1px solid white;
 }
@@ -113,4 +137,9 @@ body {
 
 .back_arrow {
   cursor: pointer;
+}
+
+.close_icon:hover .MuiSvgIcon-root {
+  cursor: pointer;
+  color: red;
 }
