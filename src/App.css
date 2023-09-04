@@ -99,3 +99,18 @@ body {
   cursor: pointer;
   color: red;
 }
+
+.portfolio_property_card:hover {
+  background-color: #719ac0;
+  cursor: pointer;
+  transition: ease-in 300ms;
+}
+
+.portfolio_property_card:hover .MuiTypography-root {
+  transition: ease-in 300ms;
+  color: white;
+}
+
+.back_arrow {
+  cursor: pointer;
+}

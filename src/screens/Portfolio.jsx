@@ -9,6 +9,7 @@ import {
 import { useTheme } from "@emotion/react";
 import { PortfolioPropertyCard } from "../components/PortfolioPropertyCard";
 import { formatFirestoreTimestamp } from "../../app/utils/dateConversion";
+import { BackArrow } from "../components/BackArrow";
 
 export const Portfolio = () => {
   // theme
@@ -28,6 +29,7 @@ export const Portfolio = () => {
         padding: "5dvh",
       }}
     >
+      <BackArrow screen="/allProperties" />
       <PortfolioPropertyCard
         name={name}
         date_added={formatFirestoreTimestamp(date_added)}

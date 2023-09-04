@@ -1,11 +1,5 @@
 import {
   Alert,
-  Badge,
-  Button,
-  Card,
-  CardActions,
-  CardMedia,
-  IconButton,
   ListSubheader,
   MenuItem,
   Select,
@@ -16,28 +10,18 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import { CustomTextField } from "../components/CustomTextField";
 import { ActionButton } from "../components/ActionButton";
-import { AddAPhoto, Close } from "@mui/icons-material";
+import { AddAPhoto } from "@mui/icons-material";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { db, storage } from "../../app/utils/firebaseConfig";
-import {
-  arrayUnion,
-  doc,
-  getDoc,
-  increment,
-  serverTimestamp,
-  setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { doc, getDoc, increment, setDoc, updateDoc } from "firebase/firestore";
 import { SelectedImages } from "../components/SelectedImages";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import properties from "../DataSets/PropertyTypes";
-import { useDispatch } from "react-redux";
-import { setOpenPortfolioName } from "../../app/features/OpenPortfolioItemSlice";
 
 export const AddProperty = () => {
   const theme = useTheme();
-  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   //   { label: "Residential Properties", header: true },
@@ -503,9 +487,6 @@ export const AddProperty = () => {
         }}
       >
         <ActionButton label="Submit" handleAction={handleAction} />
-        <Button onClick={() => dispatch(setOpenPortfolioName("name"))}>
-          Test
-        </Button>
       </div>
     </div>
   );

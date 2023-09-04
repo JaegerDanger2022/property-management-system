@@ -32,6 +32,7 @@ import {
 } from "../../app/features/OpenPortfolioItemSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { BackArrow } from "../components/BackArrow";
 
 export const AllProperties = () => {
   // theme
@@ -187,6 +188,7 @@ export const AllProperties = () => {
         color: theme.palette.text.primary,
       }}
     >
+      <BackArrow screen="/" />
       <div className="allPropertiesList" onClick={handleCloseBox}>
         {propertyList.map((item) => {
           return (

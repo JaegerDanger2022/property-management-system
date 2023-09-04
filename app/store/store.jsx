@@ -4,6 +4,7 @@ import persistReducer from "redux-persist/lib/persistReducer";
 import { combineReducers } from "@reduxjs/toolkit";
 // slices
 import { OpenPortfolioItemSlice } from "../features/OpenPortfolioItemSlice";
+import { PropertyDetailsSlice } from "../features/propertyDetailsSlice";
 
 const persistConfig = {
   key: "root",
@@ -13,6 +14,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   openportfolioitem: OpenPortfolioItemSlice.reducer,
+  propertyDetails: PropertyDetailsSlice.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
